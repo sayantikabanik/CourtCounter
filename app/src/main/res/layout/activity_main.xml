@@ -8,49 +8,55 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
-    tools:context="com.example.android.courtcounter.MainActivity">
+    tools:context="com.example.android.courtcounter.MainActivity"
+    android:baselineAligned="false">
 
-     <LinearLayout
-    android:layout_width="0dp"
-    android:layout_weight="1"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_gravity="top"
-    >
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Team A"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/team_a_score"
-        android:text="0"
-        android:textColor="#000000"
-        android:textAlignment="center"
-        android:textSize="35sp"/>/>
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Team A"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/team_a_score"
+            android:text="0"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="35sp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="+3 POINTS"
-        android:onClick="incBy3"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="-2 POINTS"
-        android:onClick="decBy3"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FREE HIT!"
-        android:onClick="incBy1"/>
-     </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+3 POINTS"
+            android:id="@+id/teamAInc3"
+            android:onClick="increment"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-2 POINTS"
+            android:id="@+id/teamADec2"
+            android:onClick="increment"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FREE HIT!"
+            android:id="@+id/teamAInc1"
+            android:onClick="increment"
+            />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -64,52 +70,56 @@
             android:layout_gravity="center_horizontal"
             android:text="Team B"
             android:textColor="#000000"
-            android:textAlignment="center"
-            android:textSize="25sp"/>/>
+            android:gravity="center"
+            android:textSize="25sp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/team_b_score"
             android:layout_weight="1"
             android:text="0"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#000000"
-            android:textSize="35sp"/>/>
+            android:textSize="35sp"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="+3 POINTS"
-            android:onClick="inccBy3"
+            android:id="@+id/teamBInc3"
+            android:onClick="increment"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="-2 POINTS"
-            android:onClick="deccBy3"/>
+            android:id="@+id/teamBDec2"
+            android:onClick="increment"
+            />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="FREE HIT!"
-            android:onClick="inccBy1"/>
+            android:id="@+id/teamBInc1"
+            android:onClick="increment"
+            />
     </LinearLayout>
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:onClick="reset"
-    android:text="RESET"
-    android:layout_alignParentBottom="true"
-    android:layout_centerInParent="true"
-    android:textColor="#000000"
-    android:textSize="15sp"
-    android:textStyle="bold"
-    android:fontFamily="monospace"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="reset"
+            android:text="RESET"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
 
-    />
 
-</RelativeLayout>
+    </RelativeLayout>
 
 </LinearLayout>

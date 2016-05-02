@@ -6,67 +6,57 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
- int points=0;
+    private int pointsA = 0;
+    private int pointsB = 0;
+    TextView scoreView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    /**
-     * Displays the given score for Team A.
-     */
-    public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-        scoreView.setText(String.valueOf(score));
+
+    //Updates Scores
+    public void updateScore()
+    {
+        scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(pointsA));
+        scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(pointsB));
     }
 
-    public void displayForTeamB(int score ) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    public void incBy3 (View v)
-    {
-       points+=3;
-        displayForTeamA( points);
-       // displayForTeamB(points);
-    }
-    public void decBy3 (View v)
-    {
-        points-=2;
-        displayForTeamA( points);
-        //displayForTeamB(points);
-    }
-    public void incBy1 (View v)
-    {
-        points+=1;
-        displayForTeamA( points);
-       // displayForTeamA(points);
-    }
-    public void inccBy3 (View v)
-    {
-        points+=3;
-        //displayForTeamA( points);
-         displayForTeamB(points);
-    }
-    public void deccBy3 (View v)
-    {
-        points-=2;
-        //displayForTeamA( points);
-        displayForTeamB(points);
-    }
-    public void inccBy1 (View v)
-    {
-        points+=1;
-        //displayForTeam( points);
-         displayForTeamB(points);
-    }
+    //Resets Scores
     public void reset (View v)
     {
-        points=0;
-        //displayForTeam( points);
-        displayForTeamB(points);
-        displayForTeamA(points);
+        pointsA = 0;
+        pointsB = 0;
+        updateScore();
+    }
+
+    //on button click
+    public void increment(View view){
+        int id = view.getId();
+        switch (id){
+            case R.id.teamAInc3 :
+                pointsA+=3;
+                break;
+            case R.id.teamADec2 :
+                pointsA-=2;
+                break;
+            case R.id.teamAInc1 :
+                pointsA++;
+                break;
+            case R.id.teamBInc3 :
+                pointsB+=3;
+                break;
+            case R.id.teamBDec2 :
+                pointsB-=2;
+                break;
+            case R.id.teamBInc1 :
+                pointsB++;
+                break;
+        }
+        updateScore();
     }
 
 
